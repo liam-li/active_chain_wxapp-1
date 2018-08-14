@@ -1,0 +1,12 @@
+{
+  "pages": [
+    "pages/main/mainui",
+    "pages/web/webview"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "链动",
+    "navigationBarTextStyle": "black"
+  }
+}

@@ -1,0 +1,35 @@
+<!--pages/main/mainui.wxml-->
+
+<view class="page">
+  <view class="page__hd">
+    <view class="page__title">Grid</view>
+    <view class="page__desc">九宫格</view>
+    <!-- 如果只是展示用户头像昵称，可以使用 <open-data /> 组件 -->
+    <open-data type="userAvatarUrl"></open-data>
+    <open-data type="userNickName"></open-data>
+    <!-- 需要使用 button 来授权登录 -->
+    <block wx:if="{{isAuth}}">
+      <button wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>
+      <view wx:else>请升级微信版本</view>
+    </block>
+  </view>
+
+  <view class="page__bd">
+    <view class="weui-grids">
+      <block wx:for="{{sportType}}" wx:key="index">
+        <navigator url="" class="weui-grid" hover-class="weui-grid_active">
+          <image class="weui-grid__icon" src="../../lib/img/{{index}}.png" />
+          <view class="weui-grid__label">{{item}}</view>
+        </navigator>
+      </block>
+    </view>
+  </view>
+</view>
+
+<view class="weui-footer weui-footer_fixed-bottom">
+  <view class="weui-footer__text">链动小程序 Copyright 2018 © Dimitri Du</view>
+  <view class="weui-footer__text">Powered By</view>
+  <view class="weui-footer__links">
+    <view bindtap='goAelfIo' class="weui-footer__link">aelf.io</view>
+  </view>
+</view>
