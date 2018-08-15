@@ -1,11 +1,12 @@
 // pages/data/datamgr.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    isUserAuth: app.globalData.isUserAuth
   },
 
   /**
@@ -26,7 +27,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    this.setData({
+      isUserAuth: app.globalData.isUserAuth
+    })
   },
 
   /**
@@ -62,5 +65,11 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+
+  returnMainUI: function (e) {
+    wx.switchTab({
+      url: '../main/mainui',
+    })
   }
 })

@@ -120,5 +120,17 @@ Page({
       userInfo: app.globalData.userInfo,
       isUserAuth: app.globalData.isUserAuth
     })
+  },
+
+  onTapSportType: function(e) {
+    if(!this.data.isUserAuth){
+      wx.showToast({
+        title: '操作失败，请点击【授权登录】后进行操作！',
+        icon: 'none',
+        duration: 3000
+      });
+    }else{
+      console.log(e)
+    }
   }
 })

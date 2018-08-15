@@ -34,10 +34,10 @@
     <view class="weui-cells__title">请选择项目进行运动登记：</view>
     <view class="weui-grids">
       <block wx:for="{{sportType}}" wx:key="index">
-        <navigator url="" class="weui-grid" hover-class="weui-grid_active">
-          <image class="weui-grid__icon" src="../../lib/img/{{index}}.png" />
+        <view class="weui-grid" hover-class="weui-grid_active" bindtap='onTapSportType' data-typeName="{{index}}">
+          <image class="weui-grid__icon" src="../../lib/img/{{index}}.png"/>
           <view class="weui-grid__label">{{item}}</view>
-        </navigator>
+        </view>
       </block>
     </view>
   </view>

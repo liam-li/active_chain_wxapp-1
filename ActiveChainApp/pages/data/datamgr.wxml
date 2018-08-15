@@ -1,1 +1,29 @@
 <!--pages/data/datamgr.wxml-->
+<block wx:if="{{!isUserAuth}}">
+<view class="page__bd">
+  <view class="weui-msg">
+        <view class="weui-msg__icon-area">
+            <icon type="warn" size="93"></icon>
+        </view>
+        <view class="weui-msg__text-area">
+            <view class="weui-msg__title">链动小程序未获授权</view>
+            <view class="weui-msg__desc">请返回主页【授权登录】后再进行操作！</view>
+        </view>
+        <view class="weui-msg__opr-area">
+            <view class="weui-btn-area">
+                <button class="weui-btn" type="default" bindtap='returnMainUI'>返回主页</button>
+            </view>
+        </view>
+    </view>
+  </view>
+</block>
+<block wx:else>
+  <view class="page">
+    <view class="page__hd">
+    </view>
+  </view>
+
+  <view class="page__bd">
+
+  </view>
+</block>
