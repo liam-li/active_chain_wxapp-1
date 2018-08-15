@@ -1,12 +1,43 @@
 {
   "pages": [
     "pages/main/mainui",
-    "pages/web/webview"
+    "pages/web/webview",
+    "pages/data/datamgr",
+    "pages/conf/config"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "链动",
     "navigationBarTextStyle": "black"
-  }
+  },
+  "tabBar": {
+    "color": "#AAA",
+    "selectedColor": "#000",
+    "list": [
+      {
+        "pagePath": "pages/main/mainui",
+        "text": "我的主页",
+        "iconPath": "lib/img/user_gray.png",
+        "selectedIconPath": "lib/img/user.png"
+      },
+      {
+        "pagePath": "pages/data/datamgr",
+        "text": "数据管理",
+        "iconPath": "lib/img/data_gray.png",
+        "selectedIconPath": "lib/img/data.png"
+      },
+      {
+        "pagePath": "pages/conf/config",
+        "text": "应用设置",
+        "iconPath": "lib/img/config_gray.png",
+        "selectedIconPath": "lib/img/config.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
 }

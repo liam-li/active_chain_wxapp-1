@@ -2,19 +2,36 @@
 
 <view class="page">
   <view class="page__hd">
-    <view class="page__title">Grid</view>
-    <view class="page__desc">九宫格</view>
-    <!-- 如果只是展示用户头像昵称，可以使用 <open-data /> 组件 -->
-    <open-data type="userAvatarUrl"></open-data>
-    <open-data type="userNickName"></open-data>
     <!-- 需要使用 button 来授权登录 -->
-    <block wx:if="{{isAuth}}">
+    <block wx:if="{{!isUserAuth}}">
+      <view class="weui-cells__title">请点击授权登陆，开始燃烧卡路里之旅！</view>
       <button wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>
       <view wx:else>请升级微信版本</view>
+    </block>
+    <block wx:else>
+      <view class="weui-cells__title">欢迎登录链动小程序，开始燃烧卡路里之旅！</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell">
+          <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+            <open-data type="userAvatarUrl" style="width: 50px; height: 50px; display: block"></open-data>
+          </view>
+          <view class="weui-cell__bd">
+            <view>
+              <open-data type="userNickName"></open-data>
+              <block wx:if="{{userInfo.gender == 1}}"> ♂</block>
+              <block wx:if="{{userInfo.gender == 2}}"> ♀</block>
+            </view>
+            <view style="font-size: 13px;color: #888888;">
+              本月运动积分 X 分
+            </view>
+          </view>
+        </view>
+      </view>
     </block>
   </view>
 
   <view class="page__bd">
+    <view class="weui-cells__title">请选择项目进行运动登记：</view>
     <view class="weui-grids">
       <block wx:for="{{sportType}}" wx:key="index">
         <navigator url="" class="weui-grid" hover-class="weui-grid_active">
@@ -27,8 +44,8 @@
 </view>
 
 <view class="weui-footer weui-footer_fixed-bottom">
-  <view class="weui-footer__text">链动小程序 Copyright 2018 © Dimitri Du</view>
-  <view class="weui-footer__text">Powered By</view>
+  <view class="weui-footer__text">链动小程序 © Copyright 2018</view>
+  <view class="weui-footer__text">Powered By Dimitri.Du</view>
   <view class="weui-footer__links">
     <view bindtap='goAelfIo' class="weui-footer__link">aelf.io</view>
   </view>
