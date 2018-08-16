@@ -1,9 +1,11 @@
 {
   "pages": [
+    "pages/intro/index",
     "pages/main/mainui",
     "pages/web/webview",
     "pages/data/datamgr",
-    "pages/conf/config"
+    "pages/conf/config",
+    "pages/main/ranks"
   ],
   "window": {
     "backgroundTextStyle": "light",

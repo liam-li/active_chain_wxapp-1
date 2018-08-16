@@ -1,30 +1,91 @@
 <!--pages/conf/config.wxml-->
 
 <block wx:if="{{!isUserAuth}}">
-<view class="page__bd">
-  <view class="weui-msg">
-        <view class="weui-msg__icon-area">
-            <icon type="warn" size="93"></icon>
+  <view class="page__bd">
+    <view class="weui-msg">
+      <view class="weui-msg__icon-area">
+        <icon type="warn" size="93"></icon>
+      </view>
+      <view class="weui-msg__text-area">
+        <view class="weui-msg__title">链动小程序未获授权</view>
+        <view class="weui-msg__desc">请返回主页【授权登录】后再进行操作！</view>
+      </view>
+      <view class="weui-msg__opr-area">
+        <view class="weui-btn-area">
+          <button class="weui-btn" type="default" bindtap='returnMainUI'>返回主页</button>
         </view>
-        <view class="weui-msg__text-area">
-            <view class="weui-msg__title">链动小程序未获授权</view>
-            <view class="weui-msg__desc">请返回主页【授权登录】后再进行操作！</view>
-        </view>
-        <view class="weui-msg__opr-area">
-            <view class="weui-btn-area">
-                <button class="weui-btn" type="default" bindtap='returnMainUI'>返回主页</button>
-            </view>
-        </view>
+      </view>
     </view>
   </view>
 </block>
+
 <block wx:else>
   <view class="page">
-    <view class="page__hd">
+    <view class="page__bd">
+      <view class="weui-loadmore weui-loadmore_line">
+        <view class="weui-loadmore__tips weui-loadmore__tips_in-line">{{userInfo.nickName}}，请设置您的个性化信息</view>
+      </view>
+      <view class="weui-cells__title">姓名（用于排行显示）</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">姓名</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" placeholder="请输入姓名" disabled='{{inputDisabled}}' />
+          </view>
+        </view>
+      </view>
+
+      <view class="weui-cells__title">性别（不可更改）</view>
+      <view class="weui-cells weui-cells_after-title">
+        <radio-group bindchange="radioChange">
+          <label class="weui-cell weui-check__label" wx:for="{{genders}}" wx:key="value">
+            <radio class="weui-check" value="{{item.value}}" checked="{{item.value == userInfo.gender}}" disabled='true' />
+            <view class="weui-cell__bd">{{item.name}}</view>
+            <view class="weui-cell__ft weui-cell__ft_in-radio" wx:if="{{item.value == userInfo.gender}}">
+              <icon class="weui-icon-radio" type="success_no_circle" size="16"></icon>
+            </view>
+          </label>
+        </radio-group>
+      </view>
+
+      <view class="weui-cells__title">体重（KG）</view>
+      <view class="page__bd page__bd_spacing">
+        <slider show-value min="40" max="140" step="1" value="70" disabled='{{inputDisabled}}' />
+      </view>
+
+      <view class="weui-cells__title">标签（多个标签请用 ; 分隔）</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">标签</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" placeholder="请输入标签名" disabled='{{inputDisabled}}' />
+          </view>
+        </view>
+      </view>
+
+      <view class="weui-cells__title">隐私选项</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">允许其他用户查看数据记录</view>
+          <view class="weui-cell__ft">
+            <switch checked disabled='{{inputDisabled}}' />
+          </view>
+        </view>
+      </view>
+
+      <view class="button-sp-area">
+        <block wx:if="{{inputDisabled}}">
+          <button class="weui-btn" type="default" plain="true" bindtap='onTapEdit'>点击修改</button>
+        </block>
+        <block wx:else>
+          <button class="weui-btn" type="primary" plain="true" bindtap='onTapSave'>点击保存</button>
+        </block>
+      </view>
+
     </view>
-  </view>
-
-  <view class="page__bd">
-
   </view>
 </block>

@@ -4,7 +4,18 @@ App({
     isUserAuth: false,
     userInfo: null,
     appid: "wx5b455f3a9165c202",
-    appsecret: "cba16baa627a79ae55c2ca1323237e27"
+    appsecret: "cba16baa627a79ae55c2ca1323237e27",
+    sportType: {
+      "badminton": "羽球",
+      "basketball": "篮球",
+      "bicycle": "骑行",
+      "football": "足球",
+      "gym": "健身",
+      "pingpong": "乒乓",
+      "running": "跑步",
+      "swimming": "游泳",
+      "walking": "步行"
+    },
   },
 
   onLaunch: function() {

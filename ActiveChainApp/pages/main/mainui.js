@@ -8,17 +8,7 @@ Page({
   data: {
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     isUserAuth: false,
-    sportType: {
-      "badminton": "羽球",
-      "basketball": "篮球",
-      "bicycle": "骑行",
-      "football": "足球",
-      "gym": "健身",
-      "pingpong": "乒乓",
-      "running": "跑步",
-      "swimming": "游泳",
-      "walking": "步行"
-    },
+    sportType: {},
     userInfo: {}
   },
 
@@ -26,6 +16,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.setData({
+      sportType: app.globalData.sportType
+    })
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -35,6 +28,8 @@ Page({
       // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
       // 所以此处加入 callback 以防止这种情况
       app.userInfoReadyCallback = res => {
+        app.globalData.userInfo = res.userInfo
+        app.globalData.isUserAuth = true
         this.setData({
           userInfo: res.userInfo,
           isUserAuth: true

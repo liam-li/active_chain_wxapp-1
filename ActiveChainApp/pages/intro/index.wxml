@@ -1,0 +1,4 @@
+<!--pages/intro/index.wxml-->
+<view class="test-bg">
+  <image src="../../lib/img/index_bg.png" class="bg-image" />
+</view>

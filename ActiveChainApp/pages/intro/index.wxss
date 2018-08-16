@@ -1,0 +1,18 @@
+/* pages/intro/index.wxss */
+
+
+  page{
+    width: 100%;
+    height: 100%;
+  }
+  .test-bg{
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+  }
+  .bg-image{
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+  }

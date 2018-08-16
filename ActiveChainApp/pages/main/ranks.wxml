@@ -1,0 +1,31 @@
+<!--pages/main/ranks.wxml-->
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-loadmore weui-loadmore_line">
+      <view class="weui-loadmore__tips weui-loadmore__tips_in-line">{{userInfo.nickName}}，查看本月排名信息</view>
+    </view>
+
+    <view class="weui-cells weui-cells_after-title">
+          <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+            <view class="weui-cell__bd">No.1 XXX</view>
+            <view class="weui-cell__ft weui-cell__ft_in-access">X 分</view>
+          </navigator>
+          <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+            <view class="weui-cell__bd">No.2 XXX</view>
+            <view class="weui-cell__ft weui-cell__ft_in-access">X 分</view>
+          </navigator>
+          <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+            <view class="weui-cell__bd">No.3 XXX</view>
+            <view class="weui-cell__ft weui-cell__ft_in-access">X 分</view>
+          </navigator>
+          <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+            <view class="weui-cell__bd">No.4 XXX</view>
+            <view class="weui-cell__ft weui-cell__ft_in-access">X 分</view>
+          </navigator>
+          <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+            <view class="weui-cell__bd">No.5 XXX</view>
+            <view class="weui-cell__ft weui-cell__ft_in-access">X 分</view>
+          </navigator>
+        </view>
+  </view>
+</view>
