@@ -5,7 +5,8 @@
     "pages/web/webview",
     "pages/data/datamgr",
     "pages/conf/config",
-    "pages/main/ranks"
+    "pages/main/ranks",
+    "pages/meetingroom/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -22,6 +23,12 @@
         "text": "我的主页",
         "iconPath": "lib/img/user_gray.png",
         "selectedIconPath": "lib/img/user.png"
+      },
+      {
+        "pagePath": "pages/meetingroom/index",
+        "text": "会议室预定",
+        "iconPath": "lib/img/data_gray.png",
+        "selectedIconPath": "lib/img/data.png"
       },
       {
         "pagePath": "pages/data/datamgr",

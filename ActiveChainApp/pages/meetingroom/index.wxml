@@ -1,0 +1,49 @@
+<view class="section">
+<view class="weui-cells__title">欢迎登录，请选择预定日期开始会议室预定</view>
+<view class="weui-cells weui-cells_after-title"> </view>
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{date_names}}">
+    <view class="picker" style="padding: 10px 10px 10px 10px;">
+      预订日期：{{date_names[index]}}
+    </view>
+  </picker>
+</view>
+<view class="weui-cells__title">请选择需要预订的会议室</view>
+<view class="weui-cells weui-cells_after-title"> </view>
+<view class = "section" style="padding: 10px 10px 10px 10px;">
+  <view class="flex-wrp" style="flex-direction:row;">
+  <button class="room_text" size="mini" disabled="true">会议室</button>
+  <button  class="room_text" size="mini" disabled="true">C506</button>
+  <button  class="room_text" size="mini" disabled="true">C526</button>
+  <button  class="room_text" size="mini" disabled="true">B505</button>
+</view>
+<view class="flex-wrp" style="flex-direction:row;">
+  <button class="room_text" size="mini" disabled="true">下午</button>
+  <button  class="room_text" size="mini" type="primary" bindtap="doReserve">可预定</button>
+    <button  class="room_text" size="mini" type="primary" bindtap="doReserve">可预定</button>
+<button  class="room_text" size="mini" type="primary" bindtap="doReserve">可预定</button>
+</view>
+<view class="flex-wrp" style="flex-direction:row;">
+  <button class="room_text" size="mini" disabled="true">下午</button>
+  <button  class="room_text" size="mini" type="primary" bindtap="doReserve">可预定</button>
+  <button  class="room_text" size="mini" type="primary" bindtap="doReserve">可预定</button>
+  <button  class="room_text" size="mini"type="primary" bindtap="doReserve">可预定</button>
+</view>
+<view class="flex-wrp" style="flex-direction:row;">
+  <button class="room_text" size="mini" disabled="true">晚上</button>
+  <button  class="room_text" size="mini" type="primary" bindtap="doReserve">可预定</button>
+  <button  class="room_text" size="mini" type="primary" bindtap="doReserve">可预定</button>
+  <button  class="room_text" size="mini"type="primary" bindtap="doReserve">可预定</button>
+</view>
+</view>
+<view class="weui-cells__title">以下为您预订过的会议室</view>
+<view class="weui-cells weui-cells_after-title"> </view>
+<view wx:for="{{my_reserve}}">
+<view class="weui-cell" style="flex-direction:row;" hover-class="weui-cell_active" bindtap="record_clicked">
+  <view style="flex-direction:row; padding-right: 10px;width:40%" >
+    <view>{{item.date}}</view> 
+    <view>{{item.time}} {{item.room}}</view>
+  </view>
+  <view>{{item.reason}}</view>
+</view>
+</view>
+<view class="weui-cells weui-cells_after-title"> </view>
